@@ -1,0 +1,235 @@
+/* --- Reset & Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.bg-website {
+    background-color: #f4f8fd;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-container {
+    width: 100%;                  /* Lebar responsif mengikuti layar */
+    max-width: 850px;             /* Batas maksimal lebar form (bisa diubah sesuai kebutuhan, misal 500px - 800px) */
+    margin: 20px auto;            /* Memberi jarak atas/bawah 20px dan membuat posisi di tengah (auto) */
+    background-color: #ffffff;    /* Warna latar belakang form (opsional, agar kontras dengan #f4f8fd) */
+    padding: 30px;                /* Jarak dalam agar teks tidak menempel di pinggir */
+    border-radius: 8px;           /* Membuat sudut melengkung agar rapi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Efek bayangan tipis yang elegan */
+}
+
+/* --- Logo h2 --- */
+
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 25px;
+    color: #0d5c3a;
+}
+
+.logo-h2 {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.subtitle {
+    font-size: 10px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* --- Form Elements --- */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+    font-size: 14px;
+}
+
+input[type="text"], select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+input[type="text"]:focus, select:focus, textarea:focus {
+    border-color: #0d5c3a;
+}
+
+
+/* --- Kotak Hasil Pencarian & Badge Status --- */
+.result {
+    margin-top: 20px;
+    background: #f1f3f5;
+    padding: 15px;
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.bg-pending {
+    background-color: #ffc107;
+    color: black;
+}
+
+.bg-proses {
+    background-color: #17a2b8;
+}
+
+.bg-selesai {
+    background-color: #28a745;
+}
+
+.error {
+    color: #dc3545;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.result {
+    margin-top: 25px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #28a745; /* Memberikan aksen garis hijau di sebelah kiri */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Mengatur jarak antar teks di dalam hasil agar tidak terlalu rapat */
+.result p, .result div {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* Menebalkan label keterangan (seperti Kode Tiket:, Nama Pelapor:, dll) */
+.result strong {
+    color: #2c3e50;
+    display: inline-block;
+    width: 130px; /* Menyamakan lebar label agar titik dua (:) sejajar rapi ke bawah */
+}
+
+/* --- Styling Tabel Dashboard Monitoring --- */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Menyatukan garis border tabel */
+    margin-top: 20px;
+    background-color: #ffffff;
+    font-size: 13px;
+}
+
+table th, table td {
+    padding: 12px 15px; /* Memberikan ruang jarak di dalam sel */
+    text-align: left;   /* Meratakan teks ke kiri */
+    border-bottom: 1px solid #e0e0e0; /* Garis pemisah antar baris yang tipis */
+}
+
+table th {
+    background-color: #0d5c3a; /* Warna latar kepala tabel (hijau tua) */
+    color: white;              /* Teks putih */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+/* Efek baris berganti warna saat kursor diarahkan */
+table tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* Penyesuaian kontainer tabel agar tidak terlalu menepi */
+.table-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Merapikan kolom Aksi Petugas agar tombol sejajar ke samping */
+td:last-child {
+    display: flex;
+    gap: 6px;            /* Jarak antar tombol */
+    align-items: center;
+    white-space: nowrap; /* Mencegah teks tombol turun baris */
+}
+
+/* Styling umum untuk tautan/tombol aksi di dalam tabel */
+td a, td button {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none; /* Menghilangkan garis bawah pada link <a> */
+    color: #ffffff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+td a:hover, td button:hover {
+    opacity: 0.85;
+}
+
+/* Warna khusus tombol Proses (Biru) dan Selesai (Hijau) */
+/* Sesuaikan nama class ini dengan yang ada di tag HTML/PHP Anda */
+/* Tombol Aksi: Pending (Kuning) */
+.btn-pending {
+    background-color: #ffc107;
+    color: #000000;
+}
+.btn-proses {
+    background-color: #17a2b8;
+}
+
+.btn-selesai {
+    background-color: #28a745;
+}
+
+/* --- Button --- */
+button, input[type="submit"], .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #06864f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+/* Efek saat kursor mouse diarahkan ke tombol */
+button:hover, input[type="submit"]:hover, .btn:hover {
+    background-color: #35b851; /* Warna hijau yang sedikit lebih gelap */
+}
